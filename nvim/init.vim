@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-" basics ------------------------------------------ {{{
+" settings ------------------------------------------ {{{
 let mapleader=" "
 if has('termguicolors')
     set termguicolors
@@ -27,4 +27,5 @@ endif
 
 set updatetime=2000         " no. of ms of inactivity it takes to update swap
                             " or execute `CursorHold` autocommand
+set path+=**                " extend path into all subdirectories
 " }}}
