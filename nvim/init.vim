@@ -15,4 +15,12 @@ set splitbelow splitright   " Split new files to the right and under current buf
 set nowrap                  " Don't wrap lines that exceed the window view
 set cursorline              " Highlight the line of the cursor
 set scrolloff=6             " Minimal no. of screen lines to keep above or under cursor
+
+if exists('$SUDO_USER')
+  set nobackup                        " don't create root-owned files
+  set nowritebackup                   " don't create root-owned files
+else
+  set backupdir=~/.vim/tmp/backup     " keep backup files out of the way
+  set backupdir+=.
+endif
 " }}}
