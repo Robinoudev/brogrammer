@@ -38,4 +38,8 @@ set shortmess+=W                      " don't echo "[w]"/"[written]" when writin
 set shortmess+=a                      " use abbreviations in messages eg. `[RO]` instead of `[readonly]`
 set shortmess+=o                      " overwrite file-written messages
 set shortmess+=t                      " truncate file messages at start
+
+set ignorecase                        " ignore case of normal letters
+set smartcase                         " only ignore the above when pattern has lower case letters only
+set incsearch                         " when typing a search, show where the pattern matches
 " }}}
