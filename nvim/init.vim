@@ -25,7 +25,17 @@ else
   set backupdir+=.
 endif
 
-set updatetime=2000         " no. of ms of inactivity it takes to update swap
-                            " or execute `CursorHold` autocommand
-set path+=**                " extend path into all subdirectories
+set updatetime=2000                   " no. of ms of inactivity it takes to update swap
+                                      " or execute `CursorHold` autocommand
+set path+=**                          " extend path into all subdirectories
+
+set shortmess+=c                      " remove messages from ins-completion-menu
+set shortmess+=A                      " remove swap file messages
+set shortmess+=I                      " remove intro screen
+set shortmess+=O                      " file-read message overwrites previous
+set shortmess+=T                      " truncate non-file messages in middle
+set shortmess+=W                      " don't echo "[w]"/"[written]" when writing
+set shortmess+=a                      " use abbreviations in messages eg. `[RO]` instead of `[readonly]`
+set shortmess+=o                      " overwrite file-written messages
+set shortmess+=t                      " truncate file messages at start
 " }}}
