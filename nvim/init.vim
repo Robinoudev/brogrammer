@@ -5,6 +5,7 @@ let mapleader=" "
 if has('termguicolors')
     set termguicolors
 fi
-set number
-set relativenumber
+set number              " Line numbers
+set relativenumber      " Numbers relative to current line
+set hidden              " Make it possible to hide unsaved buffers
 " }}}
