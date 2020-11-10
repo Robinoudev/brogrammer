@@ -42,6 +42,7 @@ set shortmess+=t                      " truncate file messages at start
 set ignorecase                        " ignore case of normal letters
 set smartcase                         " only ignore the above when pattern has lower case letters only
 set incsearch                         " when typing a search, show where the pattern matches
-
-set signcolumn=yes:1                  " Always show a signcolumn on the left
+set signcolumn=yes:1                  " always show a signcolumn on the left
+set undofile                          " keep track of changes and undos so vim doesn't forget
+set undodir=~/.vim/undodir
 " }}}
