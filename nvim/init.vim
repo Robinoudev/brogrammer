@@ -14,7 +14,8 @@ set expandtab               " Convert tabs to spaces
 set splitbelow splitright   " Split new files to the right and under current buffer
 set nowrap                  " Don't wrap lines that exceed the window view
 set cursorline              " Highlight the line of the cursor
-set scrolloff=6             " Minimal no. of screen lines to keep above or under cursor
+set scrolloff=6             " Minimal no. of screen lines to keep above or
+                            " under cursor
 
 if exists('$SUDO_USER')
   set nobackup                        " don't create root-owned files
@@ -23,4 +24,7 @@ else
   set backupdir=~/.vim/tmp/backup     " keep backup files out of the way
   set backupdir+=.
 endif
+
+set updatetime=2000         " no. of ms of inactivity it takes to update swap
+                            " or execute `CursorHold` autocommand
 " }}}
