@@ -1,5 +1,9 @@
 scriptencoding utf-8
 
+if v:progname == 'vi'
+    set noloadplugins                 " don't load plugins when launching vi
+endif
+
 " settings {{{
 let mapleader=" "
 if has('termguicolors')
@@ -64,4 +68,12 @@ set fillchars+=vert:┃                 " thicker vertical line for splits
 
 set pumblend=25                     " give the popup window transparency
 set wildmode=longest:full,full      " shell like autocomplete in command mode
+" }}}
+
+" {{{ plugins
+if &loadplugins
+    if has('packages')
+        packadd! vim-repeat
+    endif
+endif
 " }}}
