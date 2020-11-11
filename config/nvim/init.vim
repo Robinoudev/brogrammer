@@ -21,11 +21,14 @@ set sidescroll=0                      " sidescroll in jumps because terminals ar
 set sidescrolloff=3                   " same as scrolloff, but for columns
 
 if exists('$SUDO_USER')
-  set nobackup                        " don't create root-owned files
-  set nowritebackup                   " don't create root-owned files
+  set nobackup                        " don't create root-owned backup files
+  set nowritebackup                   " don't create root-owned backup files
+  set noswapfile                      " don't create root-owned swap files
 else
   set backupdir=~/.vim/tmp/backup     " keep backup files out of the way
   set backupdir+=.
+  set directory=~/.vim/tmp/swap//     " keep swap files out of the way
+  set directory+=.
 endif
 
 set updatetime=2000                   " no. of ms of inactivity it takes to update swap
