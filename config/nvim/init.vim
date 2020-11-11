@@ -48,4 +48,5 @@ set incsearch                         " when typing a search, show where the pat
 set signcolumn=yes:1                  " always show a signcolumn on the left
 set undofile                          " keep track of changes and undos so vim doesn't forget
 set undodir=~/.vim/undodir
+set noerrorbells                      " no error bells when hitting esc in normal mode etc.
 " }}}
