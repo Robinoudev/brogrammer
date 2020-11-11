@@ -17,6 +17,8 @@ set nowrap                            " Don't wrap lines that exceed the window 
 set cursorline                        " Highlight the line of the cursor
 set scrolloff=6                       " Minimal no. of screen lines to keep above or
                                       " under cursor
+set sidescroll=0                      " sidescroll in jumps because terminals are slow
+set sidescrolloff=3                   " same as scrolloff, but for columns
 
 if exists('$SUDO_USER')
   set nobackup                        " don't create root-owned files
