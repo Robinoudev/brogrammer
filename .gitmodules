@@ -1,3 +1,6 @@
 [submodule "programs/neovim"]
 	path = programs/neovim
 	url = https://github.com/neovim/neovim.git
+[submodule "programs/base16-shell"]
+	path = programs/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
