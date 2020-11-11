@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-" settings ------------------------------------------ {{{
+" settings {{{
 let mapleader=" "
 if has('termguicolors')
     set termguicolors
@@ -49,4 +49,14 @@ set signcolumn=yes:1                  " always show a signcolumn on the left
 set undofile                          " keep track of changes and undos so vim doesn't forget
 set undodir=~/.vim/undodir
 set noerrorbells                      " no error bells when hitting esc in normal mode etc.
+
+set inccommand=split                  " show preview of in preview window (eg. %s/../../g)
+set list                              " show all characters defined in `listchars`
+set shada=!,'1000,<50,s10,h           " make vim remember histories of previous sessions
+
+set fillchars=eob:~                   " indicate end of buffer with the `~` character
+set fillchars+=fold:·                 " dotted line for folds
+set fillchars+=diff:∙                 " show deleted lines in diff mode as a dot
+set fillchars+=vert:┃                 " thicker vertical line for splits
+set
 " }}}
