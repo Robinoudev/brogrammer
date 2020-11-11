@@ -11,6 +11,7 @@ set hidden                            " Make it possible to hide unsaved buffers
 set shiftwidth=4
 set tabstop=4                         " A tab counts for 4 spaces
 set expandtab                         " Convert tabs to spaces
+set autoindent                        " copy indent when starting a new line from previous line
 set splitbelow splitright             " Split new files to the right and under current buffer
 set nowrap                            " Don't wrap lines that exceed the window view
 set cursorline                        " Highlight the line of the cursor
