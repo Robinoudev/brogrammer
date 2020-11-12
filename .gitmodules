@@ -7,3 +7,15 @@
 [submodule "vim-repeat"]
 	path = .vim/pack/bundle/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim-unimpaired"]
+	path = .vim/pack/bundle/opt/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim-commentary"]
+	path = .vim/pack/bundle/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-surround"]
+	path = .vim/pack/bundle/opt/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim-dispatch"]
+	path = .vim/pack/bundle/opt/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git

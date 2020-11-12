@@ -74,6 +74,10 @@ set wildmode=longest:full,full      " shell like autocomplete in command mode
 if &loadplugins
     if has('packages')
         packadd! vim-repeat
+        packadd! vim-unimpaired
+        packadd! vim-commentary
+        packadd! vim-surround
+        packadd! vim-dispatch
     endif
 endif
 " }}}
