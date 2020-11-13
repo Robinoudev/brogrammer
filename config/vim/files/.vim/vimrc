@@ -12,6 +12,7 @@ if &loadplugins
         packadd! vim-commentary
         packadd! vim-surround
         packadd! vim-dispatch
+        packadd! vim-dirvish
 
         " colors and syntax stuff
         packadd! base16-vim

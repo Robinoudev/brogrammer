@@ -25,3 +25,6 @@
 [submodule "base16-vim"]
 	path = config/vim/files/.vim/pack/bundle/opt/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
+[submodule "vim-dirvish"]
+	path = config/vim/files/.vim/pack/bundle/opt/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
