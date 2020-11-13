@@ -12,6 +12,9 @@ if &loadplugins
         packadd! vim-commentary
         packadd! vim-surround
         packadd! vim-dispatch
+
+        " colors and syntax stuff
+        packadd! base16-vim
     else
         source $HOME/.vim/pack/bundle/opt/vim-pathogen/pathogen.vim
         call pathogen#infect('pack/bundle/opt/{}')
