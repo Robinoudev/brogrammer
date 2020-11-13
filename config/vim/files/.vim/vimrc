@@ -18,3 +18,8 @@ if &loadplugins
     endif
 endif
 " }}}
+
+" Must come *after* the `:packadd!` calls above otherwise the contents of
+" package "ftdetect" directories won't be evaluated.
+filetype indent plugin on
+syntax on
