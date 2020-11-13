@@ -31,3 +31,9 @@
 [submodule "undotree"]
 	path = config/vim/files/.vim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "nvim-lspconfig"]
+	path = config/vim/files/.vim/pack/bundle/opt/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "completion-nvim"]
+	path = config/vim/files/.vim/pack/bundle/opt/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim.git

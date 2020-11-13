@@ -1,4 +1,5 @@
-let mapleader=" "
+let mapleader="\<Space>"
+
 if has('termguicolors')
     set termguicolors
 endif

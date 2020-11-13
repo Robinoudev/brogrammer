@@ -15,6 +15,10 @@ if &loadplugins
         packadd! vim-dirvish
         packadd! undotree
 
+        if has('nvim')
+            packadd! nvim-lspconfig
+        endif
+
         " colors and syntax stuff
         packadd! base16-vim
     else
