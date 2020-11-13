@@ -28,3 +28,6 @@
 [submodule "vim-dirvish"]
 	path = config/vim/files/.vim/pack/bundle/opt/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish.git
+[submodule "undotree"]
+	path = config/vim/files/.vim/pack/bundle/opt/undotree
+	url = https://github.com/mbbill/undotree.git

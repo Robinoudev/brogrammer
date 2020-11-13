@@ -13,6 +13,7 @@ if &loadplugins
         packadd! vim-surround
         packadd! vim-dispatch
         packadd! vim-dirvish
+        packadd! undotree
 
         " colors and syntax stuff
         packadd! base16-vim
