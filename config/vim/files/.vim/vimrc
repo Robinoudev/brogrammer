@@ -12,6 +12,9 @@ if &loadplugins
         packadd! vim-commentary
         packadd! vim-surround
         packadd! vim-dispatch
+    else
+        source $HOME/.vim/pack/bundle/opt/vim-pathogen/pathogen.vim
+        call pathogen#infect('pack/bundle/opt/{}')
     endif
 endif
 " }}}
