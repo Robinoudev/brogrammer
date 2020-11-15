@@ -14,6 +14,7 @@ if &loadplugins
         packadd! vim-dispatch
         packadd! vim-dirvish
         packadd! vim-fugitive
+        packadd! vim-fetch
         packadd! undotree
 
         packadd! fzf

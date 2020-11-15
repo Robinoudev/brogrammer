@@ -49,3 +49,6 @@
 [submodule "fzf-checkout"]
 	path = config/vim/files/.vim/pack/bundle/opt/fzf-checkout
 	url = https://github.com/stsewd/fzf-checkout.vim.git
+[submodule "vim-fech"]
+	path = config/vim/files/.vim/pack/bundle/opt/vim-fetch
+	url = https://github.com/wsdjeg/vim-fetch.git
