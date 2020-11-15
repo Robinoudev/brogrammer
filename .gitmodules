@@ -37,3 +37,6 @@
 [submodule "completion-nvim"]
 	path = config/vim/files/.vim/pack/bundle/opt/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim.git
+[submodule "vim-fugitive"]
+	path = config/vim/files/.vim/pack/bundle/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
