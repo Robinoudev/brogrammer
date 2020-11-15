@@ -1,5 +1,5 @@
 local vim = vim
-local nvim_lsp = require('nvim_lsp')
+local lspconfig = require('lspconfig')
 local map_key = function(mode, key, result)
   vim.api.nvim_buf_set_keymap(0, mode, key, result, {noremap = true, silent = true})
 end
@@ -45,28 +45,26 @@ local custom_attach = function(client)
     vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
 end
 
-nvim_lsp.tsserver.setup({
+lspconfig.tsserver.setup({
     on_attach = custom_attach
 })
-nvim_lsp.solargraph.setup({
+lspconfig.solargraph.setup({
     on_attach = custom_attach,
     settings = { solargraph = { diagnostics = true; formatting = true; logLevel = 'debug'; } }
 })
-nvim_lsp.clangd.setup({
+lspconfig.clangd.setup({
     on_attach = custom_attach,
     cmd = {"/usr/local/Cellar/llvm/11.0.0/bin/clangd"}
 })
-nvim_lsp.sumneko_lua.setup({
+lspconfig.sumneko_lua.setup({
     on_attach = custom_attach,
-    cmd = { "/home/robin/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/bin/Linux/lua-language-server", "-E", "/home/robin/.cache/nvim/nvim_lsp/sumneko_lua/lua-language-server/main.lua" }
 })
-nvim_lsp.rust_analyzer.setup({
+lspconfig.rust_analyzer.setup({
     on_attach = custom_attach
 })
-nvim_lsp.elixirls.setup({
+lspconfig.elixirls.setup({
     on_attach = custom_attach,
-    cmd = { "/home/robin/.cache/nvim/nvim_lsp/elixirls/elixir-ls/release/language_server.sh" }
 })
-nvim_lsp.vimls.setup({
+lspconfig.vimls.setup({
     on_attach = custom_attach
 })
