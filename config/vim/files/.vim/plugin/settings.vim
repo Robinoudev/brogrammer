@@ -54,6 +54,8 @@ set list                              " show all characters defined in `listchar
 
 set wildmode=longest:full,full        " shell like autocomplete in command mode
 
+set clipboard+=unnamedplus            " Add the system clipboard to vim
+
 if has('nvim')
     set signcolumn=yes:1              " always show a signcolumn on the left
     set inccommand=split              " show preview of in preview window (eg. %s/../../g)
