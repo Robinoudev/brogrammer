@@ -1,9 +1,26 @@
-set background=dark
-colorscheme base16-default-dark
+function s:SetColorScheme()
+    if !has('termguicolors')
+        let g:base16colorspace=256
+    endif
 
-" Italicize comments
-hi Comment gui=italic
+    set background=dark
+    colorscheme base16-default-dark
 
-" make search and inc search red, bold, italic and underlined
-hi Search gui=bold,underline,italic guifg=Red guibg=bg
-hi IncSearch gui=bold,underline,italic guifg=Red guibg=bg
+    " Italicize comments
+    highlight! Comment gui=italic
+
+    " make search and inc search red, bold, italic and underlined
+    highlight! Search gui=bold,underline,italic guifg=Red guibg=bg
+    highlight! IncSearch gui=bold,underline,italic guifg=Red guibg=bg
+endfunction
+
+if v:progname !=# 'vi'
+    if has('autocmd')
+        augroup CreateColors
+            autocmd!
+            autocmd FocusGained * call s:SetColorScheme()
+        augroup END
+    endif
+
+    call s:SetColorScheme()
+endif
