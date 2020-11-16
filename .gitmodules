@@ -40,3 +40,12 @@
 [submodule "vim-fugitive"]
 	path = config/vim/files/.vim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "fzf"]
+	path = config/vim/files/.vim/pack/bundle/opt/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "fzf-vim"]
+	path = config/vim/files/.vim/pack/bundle/opt/fzf-vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "fzf-checkout"]
+	path = config/vim/files/.vim/pack/bundle/opt/fzf-checkout
+	url = https://github.com/stsewd/fzf-checkout.vim.git

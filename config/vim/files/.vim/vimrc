@@ -16,6 +16,10 @@ if &loadplugins
         packadd! vim-fugitive
         packadd! undotree
 
+        packadd! fzf
+        packadd! fzf-vim
+        packadd! fzf-checkout
+
         if has('nvim')
             packadd! nvim-lspconfig
         endif
