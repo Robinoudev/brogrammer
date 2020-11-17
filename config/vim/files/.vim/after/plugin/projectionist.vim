@@ -4,8 +4,8 @@ let g:projectionist_heuristics = {
             \           'alternate': 'spec/{}_spec.rb',
             \           'type': 'source'
             \       },
-            \       'spec/models/company_spec.rb': {
-            \           'alternate': 'app/models/company.rb',
+            \       'spec/*_spec.rb': {
+            \           'alternate': 'app/{}.rb',
             \           'type': 'test'
             \       },
             \
