@@ -13,6 +13,7 @@ nmap <leader>gfa :Git fetch --all --prune<CR>
 " }}}
 
 " Search mappings {{{
+" Turn on 'verymagic' mode when searching
 nnoremap / /\v
 nnoremap ? ?\v
 

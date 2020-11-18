@@ -11,3 +11,7 @@ vnoremap <leader>p "_dP
 " Indent selected lines and keep selection
 vmap < <gv
 vmap > >gv
+
+" Also turn on 'verymagic' mode on visual select search
+vnoremap / /\v
+vnoremap ? ?\v
