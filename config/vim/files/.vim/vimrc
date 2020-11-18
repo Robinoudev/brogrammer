@@ -24,6 +24,7 @@ if &loadplugins
 
         if has('nvim')
             packadd! nvim-lspconfig
+            packadd! corpus
         endif
 
         " colors and syntax stuff

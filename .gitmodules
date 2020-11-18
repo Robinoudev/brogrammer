@@ -55,3 +55,6 @@
 [submodule "vim-projectionist"]
 	path = config/vim/files/.vim/pack/bundle/opt/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist.git
+[submodule "corpus"]
+	path = config/vim/files/.vim/pack/bundle/opt/corpus
+	url = https://github.com/wincent/corpus.git
