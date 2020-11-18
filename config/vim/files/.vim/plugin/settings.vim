@@ -17,6 +17,8 @@ set scrolloff=6                       " Minimal no. of screen lines to keep abov
                                       " under cursor
 set sidescroll=0                      " sidescroll in jumps because terminals are slow
 set sidescrolloff=3                   " same as scrolloff, but for columns
+set textwidth=80                      " maximum width of text in insert mode for comments
+set colorcolumn=+1                    " display a visible color column at the end of the textwidth
 
 if exists('$SUDO_USER')
   set nobackup                        " don't create root-owned backup files
