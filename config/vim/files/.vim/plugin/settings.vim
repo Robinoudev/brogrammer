@@ -53,10 +53,20 @@ set undodir=~/.vim/undodir
 set noerrorbells                      " no error bells when hitting esc in normal mode etc.
 
 set list                              " show all characters defined in `listchars`
+set listchars=nbsp:⦸                  " CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
+set listchars+=tab:▷┅                 " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7)
+                                      " + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
+set listchars+=extends:»              " RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
+set listchars+=precedes:«             " LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
+set listchars+=trail:•                " BULLET (U+2022, UTF-8: E2 80 A2)
+set modelines=5                       " scan this many lines looking for modeline
+set nojoinspaces                      " don't autoinsert two spaces after '.', '?', '!' for join command
 
 set wildmode=longest:full,full        " shell like autocomplete in command mode
 
 set clipboard+=unnamedplus            " Add the system clipboard to vim
+set laststatus=2                      " always show status line
+set lazyredraw                        " don't bother updating screen during macro playback
 
 if has('nvim')
     set signcolumn=yes:1              " always show a signcolumn on the left
