@@ -16,6 +16,9 @@ function s:SetColorScheme()
     " setup colors for nvim lsp messages
     highlight! LspDiagnosticsSignError gui=bold guibg=bg guifg=Red
     highlight! LspDiagnosticsSignWarning gui=bold guibg=bg guifg=Orange
+
+    " Make list chars less fat
+    highlight! NonText gui=none
 endfunction
 
 if v:progname !=# 'vi'
