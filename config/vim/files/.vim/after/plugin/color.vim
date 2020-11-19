@@ -12,6 +12,10 @@ function s:SetColorScheme()
     " make search and inc search red, bold, italic and underlined
     highlight! Search gui=bold,underline,italic guifg=Red guibg=bg
     highlight! IncSearch gui=bold,underline,italic guifg=Red guibg=bg
+
+    " setup colors for nvim lsp messages
+    highlight! LspDiagnosticsSignError gui=bold guibg=bg guifg=Red
+    highlight! LspDiagnosticsSignWarning gui=bold guibg=bg guifg=Orange
 endfunction
 
 if v:progname !=# 'vi'
