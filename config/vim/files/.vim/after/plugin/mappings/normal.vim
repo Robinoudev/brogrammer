@@ -30,7 +30,7 @@ nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
 " }}}
 
 " toggle folds w/ shift tab
-nnoremap <S-Tab> za 
+nnoremap , za
 
 " Yank from cursor to end of line
 nnoremap Y y$
