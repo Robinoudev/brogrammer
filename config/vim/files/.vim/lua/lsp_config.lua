@@ -16,10 +16,10 @@ vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'} -- sub
 vim.g.completion_trigger_keyword_length = 2 -- only show completion after 2 characters
 
 -- change sign characters for LSP
-vim.cmd [[sign define LspDiagnosticsErrorSign text=✖]]
-vim.cmd [[sign define LspDiagnosticsWarningSign text=⚠]]
-vim.cmd [[sign define LspDiagnosticsInformationSign text=ℹ]]
-vim.cmd [[sign define LspDiagnosticsErrorSign text=➤]]
+vim.cmd [[sign define LspDiagnosticsSignError text=✖]]
+vim.cmd [[sign define LspDiagnosticsSignWarning text=⚠]]
+vim.cmd [[sign define LspDiagnosticsSignInformation text=ℹ]]
+vim.cmd [[sign define LspDiagnosticsSignHint text=➤]]
 
 local custom_attach = function(client)
     vim.cmd [[ packadd completion-nvim ]]
@@ -40,7 +40,7 @@ local custom_attach = function(client)
     map_key('n', '<leader>vh', '<cmd>lua vim.lsp.buf.hover()<CR>')
     map_key('n', '<leader>vrr', '<cmd>lua vim.lsp.buf.references()<CR>')
     map_key('n', '<leader>vrn', '<cmd>lua vim.lsp.buf.rename()<CR>')
-    map_key('n', '<leader>vsd', '<cmd>lua vim.lsp.buf.show_line_diagnostics()<CR>')
+    map_key('n', '<leader>vsd', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
 
     vim.cmd("setlocal omnifunc=v:lua.vim.lsp.omnifunc")
 end
