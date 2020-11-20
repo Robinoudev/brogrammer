@@ -1,0 +1,1 @@
+call robin#functions#plaintext()
