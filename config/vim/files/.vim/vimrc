@@ -18,6 +18,7 @@ if &loadplugins
         packadd! vim-projectionist
         packadd! undotree
         packadd! terminus
+        packadd! pinnacle
 
         packadd! fzf
         packadd! fzf-vim

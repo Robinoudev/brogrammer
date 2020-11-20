@@ -57,6 +57,9 @@ local focus_window = function()
     -- sets the colorcolumn from textwidth till col 256
     vim.api.nvim_win_set_option(0, 'colorcolumn', focused_colorcolumn)
 
+    -- TODO: exclude some filetypes here so they don't get list chars
+    --      eg. help and gitcommit
+
     -- enables the list characters again (tabs, whitespace etc.)
     should_have_list_chars(function(_)
         vim.api.nvim_win_set_option(0, 'list', true)
@@ -64,6 +67,7 @@ local focus_window = function()
 
     -- concealed text it replaced with one character
     vim.api.nvim_win_set_option(0, 'conceallevel', 1)
+    require'robin.statusline'.focus_statusline()
 end
 
 local blur_window = function()
@@ -78,6 +82,7 @@ local blur_window = function()
 
     -- concealed text is shown normally (no concealing)
     vim.api.nvim_win_set_option(0, 'conceallevel', 0)
+    require'robin.statusline'.focus_statusline()
 end
 
 autocmds.buf_enter = function()

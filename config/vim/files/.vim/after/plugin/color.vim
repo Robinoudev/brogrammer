@@ -19,6 +19,10 @@ function s:SetColorScheme()
 
     " Make list chars less fat
     highlight! NonText gui=none
+
+    " execute all autocmds for the ColorScheme group when this function is
+    " called
+    doautocmd ColorScheme
 endfunction
 
 if v:progname !=# 'vi'

@@ -61,3 +61,6 @@
 [submodule "terminus"]
 	path = config/vim/files/.vim/pack/bundle/opt/terminus
 	url = https://github.com/wincent/terminus.git
+[submodule "pinnacle"]
+	path = config/vim/files/.vim/pack/bundle/opt/pinnacle
+	url = https://github.com/wincent/pinnacle.git
