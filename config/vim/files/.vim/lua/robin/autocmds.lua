@@ -40,6 +40,15 @@ local winhighlight_blurred = table.concat({
   'SignColumn:ColorColumn'
 }, ',')
 
+local should_have_list_chars = function(callback)
+    local filetype = vim.bo.filetype
+    local listed = vim.bo.buflisted
+
+    if autocmds.list_chars_filetype_blacklist[filetype] ~= true and listed then
+        callback(filetype)
+    end
+end
+
 local focus_window = function()
     -- make winhighlight an empty string again (default). Which means that all
     -- highlight groups get their own highlighting back
@@ -49,7 +58,9 @@ local focus_window = function()
     vim.api.nvim_win_set_option(0, 'colorcolumn', focused_colorcolumn)
 
     -- enables the list characters again (tabs, whitespace etc.)
-    vim.api.nvim_win_set_option(0, 'list', true)
+    should_have_list_chars(function(_)
+        vim.api.nvim_win_set_option(0, 'list', true)
+    end)
 
     -- concealed text it replaced with one character
     vim.api.nvim_win_set_option(0, 'conceallevel', 1)
@@ -96,5 +107,9 @@ end
 autocmds.vim_enter = function()
   focus_window()
 end
+
+autocmds.list_chars_filetype_blacklist = {
+    ['help'] = true
+}
 
 return autocmds
