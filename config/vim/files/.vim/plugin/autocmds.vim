@@ -5,3 +5,6 @@ autocmd FocusGained * lua require'robin.autocmds'.focus_gained()
 autocmd VimEnter * lua require'robin.autocmds'.vim_enter()
 autocmd WinEnter * lua require'robin.autocmds'.win_enter()
 autocmd WinLeave * lua require'robin.autocmds'.win_leave()
+
+" automatically delete trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
