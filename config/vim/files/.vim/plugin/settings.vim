@@ -35,6 +35,18 @@ else
     set undodir+=.
 endif
 
+if has('viminfo')
+    if exists('$SUDO_USER')
+        set viminfo=                  " don't create root-owned viminfo file
+    else
+        if isdirectory('~/local/.vim/tmp')
+            set viminfo+=n~/local/.vim/tmp/viminfo
+        else
+            set viminfo+=n~/.vim/tmp/viminfo
+        endif
+    endif
+endif
+
 set updatetime=2000                   " no. of ms of inactivity it takes to update swap
                                       " or execute `CursorHold` autocommand
 set path+=**                          " extend path into all subdirectories
