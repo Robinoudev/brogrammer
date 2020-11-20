@@ -21,14 +21,18 @@ set textwidth=80                      " maximum width of text in insert mode for
 set colorcolumn=+1                    " display a visible color column at the end of the textwidth
 
 if exists('$SUDO_USER')
-  set nobackup                        " don't create root-owned backup files
-  set nowritebackup                   " don't create root-owned backup files
-  set noswapfile                      " don't create root-owned swap files
+    set nobackup                      " don't create root-owned backup files
+    set nowritebackup                 " don't create root-owned backup files
+    set noswapfile                    " don't create root-owned swap files
+    set noundofile                    " don't create root-owned undo files
 else
-  set backupdir=~/.vim/tmp/backup     " keep backup files out of the way
-  set backupdir+=.
-  set directory=~/.vim/tmp/swap//     " keep swap files out of the way
-  set directory+=.
+    set backupdir=~/.vim/tmp/backup   " keep backup files out of the way
+    set backupdir+=.
+    set directory=~/.vim/tmp/swap//   " keep swap files out of the way
+    set directory+=.
+    set undofile                      " keep track of changes and undos so vim doesn't forget
+    set undodir=~/.vim/tmp/undodir
+    set undodir+=.
 endif
 
 set updatetime=2000                   " no. of ms of inactivity it takes to update swap
