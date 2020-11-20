@@ -41,7 +41,8 @@ local winhighlight_blurred = table.concat({
 }, ',')
 
 local focus_window = function()
-    -- make winhighlight an empty string again (default)
+    -- make winhighlight an empty string again (default). Which means that all
+    -- highlight groups get their own highlighting back
     vim.api.nvim_win_set_option(0, 'winhighlight', '')
 
     -- sets the colorcolumn from textwidth till col 256
@@ -56,7 +57,9 @@ end
 
 local blur_window = function()
     -- pust the hi groups defined above in the winhighlight string
-    -- each group in this string gets overriden with highlight group ,
+    -- each group to the left of the color gets highlighted the same as the
+    -- group on the right side of the colon. eg. CursorLineNr gets the same
+    -- highlighting as LineNr.
     vim.api.nvim_win_set_option(0, 'winhighlight', winhighlight_blurred)
 
     -- disables the list characters (tabs, whitespace etc.)
