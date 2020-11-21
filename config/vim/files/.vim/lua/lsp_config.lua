@@ -68,3 +68,6 @@ lspconfig.elixirls.setup({
 lspconfig.vimls.setup({
     on_attach = custom_attach
 })
+lspconfig.bashls.setup({
+    on_attach = custom_attach
+})

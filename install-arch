@@ -1,0 +1,142 @@
+#!/bin/sh
+
+# This script attempts to install Arch Linux on an empty system. Please make
+# sure you have determined what disk (eg. /dev/sdX) you want to install arch
+# onto, you will be prompted for it.
+
+set -e
+
+## Helper functions
+
+# logger function to show what we're doing
+function log {
+    echo "[arch install]: $*"
+}
+
+function partition_uefi {
+    cat << HERE | sfdisk $DISK
+    label: gpt
+    device: $DISK
+
+    $DISK"1": size=500MiB, type=uefi
+    $DISK"2": size=10GiB, type=linux
+    $DISK"3": type=linux
+
+HERE
+}
+
+function partition_legacy {
+    cat << HERE | sfdisk $DISK
+    label: gpt
+    device: $DISK
+
+    $DISK"1": size=500MiB, type=linux
+    $DISK"2": size=10GiB, type=linux
+    $DISK"3": type=linux
+
+HERE
+}
+
+function format_uefi {
+    mkfs.fat -F32 $DISK"1"
+    mkswap $DISK"2"
+    mkfs.ext4 $DISK"3"
+}
+
+function format_legacy {
+    mkfs.ext4 $DISK"1"
+    mkswap $DISK"2"
+    mkfs.ext4 $DISK"3"
+}
+
+## Beginning of install script
+
+# Lets first check if it's really an arch system
+log "Checking if the system is compatible"
+SYSTEM=$(uname -r)
+if [[ $SYSTEM != *"arch"* ]]; then
+    # not on arch, let's quit
+    log "Error: Not an arch system"
+    exit
+fi
+# update
+log "Refresh packages"
+pacman -Syy
+
+# setting keymaps
+log "Setting keymaps"
+loadkeys dvorak
+
+# we neet to make sure if it's an efi or legacy boot mode
+log "Checking boot mode"
+EFI_VARS_COUNT=$(ls /sys/firmware/efi/efivars | wc -l)
+BOOT_MODE=""
+if [[ $EFI_VARS_COUNT ]]; then
+    $BOOT_MODE="uefi"
+else
+    $BOOT_MODE="legacy"
+fi
+log "Looks like a $BOOT_MODE system"
+
+# let's check for an internet connection
+log "Checking for available network"
+ping -c 3 oudevrielink.net
+
+log "Update the clock"
+timedatectl set-ntp true
+
+read -p "What disk should we use? (/dev/sdX): " DISK
+
+log "Partition the disk"
+case $BOOT_MODE in
+    uefi)
+        partition_uefi
+        ;;
+    legacy)
+        partition_legacy
+        ;;
+    *)
+        log "Something went wrong for mode; $BOOT_MODE"
+        exit 1
+        ;;
+esac
+
+log "Formatting partitions"
+case $BOOT_MODE in
+    uefi)
+        format_uefi
+        ;;
+    legacy)
+        format_legacy
+        ;;
+    *)
+        log "Something went wrong for mode; $BOOT_MODE"
+        exit 1
+        ;;
+esac
+
+log "Mounting the file systems"
+mount $DISK"3" /mnt
+mkdir /mnt/boot
+mount $DISK"1" /mnt/boot
+swapon $DISK"2"
+
+log "Starting the installation of the base system and required packages"
+pacstrap /mnt base base-devel linux linux-firmware vim networkmanager
+
+log "Generating Fstab"
+genfstab -U /mnt >> /mnt/fstab
+
+log "Changing root to newly installed system"
+arch-chroot /mnt
+
+log "Setting the timezone and clock"
+ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+hwclock --systohc
+
+log "Setting locale"
+cat "LANG=en_US.UTF-8" >> /etc/locale.conf
+cat "LANG=en_US.ISO" >> /etc/locale.conf
+
+log "persist keyboard layout to dvorak"
+# TODO: how do I change a string in a file
