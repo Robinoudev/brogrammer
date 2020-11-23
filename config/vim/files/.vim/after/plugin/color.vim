@@ -3,8 +3,25 @@ function s:SetColorScheme()
         let g:base16colorspace=256
     endif
 
-    set background=dark
-    colorscheme base16-default-dark
+    let s:base16_config = expand('~/.vim/.base16')
+    if filereadable(s:base16_config)
+        let s:config = readfile(s:base16_config, '', 2)
+
+        if s:config[1] =~# '^dark\|light$'
+            execute 'set background=' . s:config[1]
+        else
+            echoerr 'Bad background ' . s:config[1] . ' in' . s:base16_config
+        endif
+
+        if filereadable(expand('~/.vim/pack/bundle/opt/base16-vim/colors/base16-' . s:config[0] . '.vim'))
+            execute 'colorscheme base16-' . s:config[0]
+        else
+            echoerr 'Bad colorscheme ' . s:config[0] . ' in' . s:base16_config
+        endif
+    else
+        set background=dark
+        colorscheme base16-outrun-dark
+    endif
 
     " Italicize comments
     highlight! Comment gui=italic
