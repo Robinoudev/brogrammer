@@ -20,6 +20,9 @@ function s:SetColorScheme()
     " Make list chars less fat
     highlight! NonText gui=none
 
+    " Make end of buffer the same color as the colorcolumn
+    execute 'highlight link EndOfBuffer ColorColumn'
+
     " execute all autocmds for the ColorScheme group when this function is
     " called
     doautocmd ColorScheme
