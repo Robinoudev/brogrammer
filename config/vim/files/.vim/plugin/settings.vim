@@ -84,6 +84,8 @@ set clipboard+=unnamedplus            " Add the system clipboard to vim
 set laststatus=2                      " always show status line
 set lazyredraw                        " don't bother updating screen during macro playback
 
+set switchbuf=usetab                  " when switching to a buffer in another tab, jump to that tab
+
 if has('nvim')
     set signcolumn=yes:1              " always show a signcolumn on the left
     set inccommand=split              " show preview of in preview window (eg. %s/../../g)
