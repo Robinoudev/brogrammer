@@ -19,6 +19,7 @@ if &loadplugins
         packadd! undotree
         packadd! terminus
         packadd! pinnacle
+        packadd! command-t
 
         packadd! fzf
         packadd! fzf-vim

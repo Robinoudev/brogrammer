@@ -64,3 +64,6 @@
 [submodule "pinnacle"]
 	path = config/vim/files/.vim/pack/bundle/opt/pinnacle
 	url = https://github.com/wincent/pinnacle.git
+[submodule "command-t"]
+	path = config/vim/files/.vim/pack/bundle/opt/command-t
+	url = https://github.com/wincent/command-t.git

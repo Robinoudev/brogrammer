@@ -86,6 +86,10 @@ set lazyredraw                        " don't bother updating screen during macr
 
 set switchbuf=usetab                  " when switching to a buffer in another tab, jump to that tab
 
+if has('wildignore')
+  set wildignore+=*.o,*.rej           " patterns to ignore during file-navigation
+endif
+
 if has('nvim')
     set signcolumn=yes:1              " always show a signcolumn on the left
     set inccommand=split              " show preview of in preview window (eg. %s/../../g)
