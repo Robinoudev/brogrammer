@@ -21,6 +21,7 @@ nnoremap <C-p> :GF<CR>
 nnoremap <leader>pf :Files<CR>
 nnoremap <leader>ps :Rg<Space>
 nnoremap <leader>pv :Vex <bar> :vertical resize 30
+nnoremap <leader>q :q<CR>
 
 " This mapping works as follows;
 " <C-R> (or, control R) allows you to access a register in the command line. The
