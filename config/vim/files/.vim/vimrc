@@ -20,6 +20,7 @@ if &loadplugins
         packadd! terminus
         packadd! pinnacle
         packadd! command-t
+        packadd! loupe
 
         packadd! fzf
         packadd! fzf-vim

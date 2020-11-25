@@ -67,3 +67,6 @@
 [submodule "command-t"]
 	path = config/vim/files/.vim/pack/bundle/opt/command-t
 	url = https://github.com/wincent/command-t.git
+[submodule "loupe"]
+	path = config/vim/files/.vim/pack/bundle/opt/loupe
+	url = https://github.com/wincent/loupe.git
