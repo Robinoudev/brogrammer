@@ -135,8 +135,44 @@ ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc
 
 log "Setting locale"
-cat "LANG=en_US.UTF-8" >> /etc/locale.conf
-cat "LANG=en_US.ISO" >> /etc/locale.conf
+sed -i \
+    -e 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8' \
+    -e 's/^#en_US.ISO ISO/en_US.ISO ISO' /etc/locale.gen
+
+locale-gen
+
+cat "lang=en_US.UTF-8" >> /etc/locale.conf
 
 log "persist keyboard layout to dvorak"
-# TODO: how do I change a string in a file
+sed -i -e "s/^[^#]EYMAP=.*/KEYMAP=dvorak/g"
+
+log "configuring network"
+read -p "What should the hostname be?" HOSTNAME
+
+cat $HOSTNAME >> /etc/hostname
+cat "127.0.0.1  localhost" >> /etc/hosts
+cat "::1        localhost" >> /etc/hosts
+cat "127.0.1.1  $HOSTNAME.localdomain   $HOSTNAME" >> /etc/hosts
+
+log "Set a root passwd"
+passwd
+
+log "Installing microcode"
+# TODO: check if cpu is intel or amd
+CPU=""
+if [[ $CPU == "intel" ]]; then
+    pacman -S --noconfirm intel-ucode
+else
+    pacman -S --noconfirm amd-ucode
+fi
+
+log "Setting up the bootloader"
+if [[ $BOOT_MODE == "uefi" ]]; then
+    pacman -S --noconfirm grub efibootmgr
+    grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=GRUB
+    grub-mkconfig -o /boot/grub/grub.cfg
+else
+    pacman -S --noconfirm grub
+    grub-install --target=i386-pc $DISK
+    grub-mkconfig -o /boot/grub/grub.cfg
+fi
