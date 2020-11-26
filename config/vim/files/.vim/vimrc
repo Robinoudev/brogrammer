@@ -21,6 +21,7 @@ if &loadplugins
         packadd! pinnacle
         packadd! command-t
         packadd! loupe
+        packadd! ferret
 
         packadd! fzf
         packadd! fzf-vim
