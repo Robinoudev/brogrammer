@@ -28,9 +28,9 @@ local custom_attach = function(client)
     completion.on_attach(client)
 
       -- Rust is currently the only thing w/ inlay hints
-    if vim.api.nvim_buf_get_option(0, 'filetype') == 'rust' then
-        vim.cmd [[autocmd BufEnter,BufWritePost <buffer> :lua require('lsp_extensions.inlay_hints').request { aligned = true, prefix = " » " }]]
-    end
+    -- if vim.api.nvim_buf_get_option(0, 'filetype') == 'rust' then
+    --     vim.cmd [[autocmd BufEnter,BufWritePost <buffer> :lua require('lsp_extensions.inlay_hints').request { aligned = true, prefix = " » " }]]
+    -- end
 
     --
     --- Mappings
@@ -53,8 +53,7 @@ lspconfig.solargraph.setup({
     settings = { solargraph = { diagnostics = true; formatting = true; logLevel = 'debug'; } }
 })
 lspconfig.clangd.setup({
-    on_attach = custom_attach,
-    cmd = {"/usr/local/Cellar/llvm/11.0.0/bin/clangd"}
+    on_attach = custom_attach
 })
 lspconfig.sumneko_lua.setup({
     on_attach = custom_attach,
