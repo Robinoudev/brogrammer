@@ -1,0 +1,20 @@
+## Global input bindings for X
+
+# Screenshots
+Print
+  screenshot
+
+# Brightness and audo
+
+XF86MonBrightnessDown
+  xbacklight -dec 15
+XF86MonBrightnessUp
+  xbacklight -inc 15
+XF86AudioMute
+  amixer set Master toggle
+XF86AudioLowerVolume
+  amixer set Master 3dB-
+XF86AudioRaiseVolume
+  amixer set Master 3dB+
+
+# vim:ft=cfg
