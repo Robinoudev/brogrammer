@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+bat=$(cat /sys/class/power_supply/BAT0/capacity)
+printf "Bat: $bat \n"

@@ -1,0 +1,29 @@
+#!/bin/sh
+alias ka="killall" \
+  sdn="sudo shutdown -h now" \
+  rbn="sudo shutdown -r now" \
+  v="$EDITOR" \
+  vimrc="$EDITOR $HOME/.config/nvim/init.vim" \
+  zshrc="$EDITOR $HOME/.zshrc" \
+  ls="ls -hN --color=auto --group-directories-first" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME" \
+  ll="ls -l" \
+  la="ls -lA" \
+  dc="docker-compose" \
+  dcu="docker-compose up backend worker" \
+  dcr="docker-compose run --rm" \
+  ticketsystem="cd $HOME/personal/ticketsystem" \
+  ozone="cd $HOME/dev/ozone" \
+  whoneeds="pacman -Qi" \
+  sp="sudo pacman" \
+  sysupdate="sudo pacman -Syyu" \
+  ds="dotfiles status" \
+  da="dotfiles add" \
+  dcm="dotfiles commit -m "$1"" \
+  gcm="git commit -m "$1"" \
+  fd="fdfind" \
+  gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "[WIP]: $(date) [skip ci]"'
+
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
