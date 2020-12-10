@@ -22,15 +22,16 @@
 ;; (setq doom-font (font-spec :family "Inconsolata" :size 12 :weight 'medium)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15)
+(setq doom-font (font-spec :family "Source Code Pro" :size 18 :weight 'Light)
       doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
-      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24))
+      doom-big-font (font-spec :family "Source Code Pro" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
 (custom-set-faces!
-  '(font-lock-comment-face :slant italic)
-  '(font-lock-keyword-face :slant italic))
+  '(font-lock-comment-face :slant Italic :weight Light)
+  '(font-lock-keyword-face :slant Italic)
+  '(font-lock-type-face :weight Regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -74,3 +75,6 @@
 (setq doom-modeline-buffer-file-name-style 'truncate-all)
 
 (setq doom-modeline-vcs-max-length 20)
+
+;; set auth file
+(setq auth-sources '("~/.authinfo"))
