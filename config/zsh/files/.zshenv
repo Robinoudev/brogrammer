@@ -1,4 +1,3 @@
-export CHROME_BIN="/bin/chromium-browser"
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
 export EDITOR='nvim'
