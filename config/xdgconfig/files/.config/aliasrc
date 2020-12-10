@@ -23,7 +23,6 @@ alias ka="killall" \
   da="dotfiles add" \
   dcm="dotfiles commit -m "$1"" \
   gcm="git commit -m "$1"" \
-  fd="fdfind" \
   gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "[WIP]: $(date) [skip ci]"'
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
