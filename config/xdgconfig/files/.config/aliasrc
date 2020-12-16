@@ -1,6 +1,6 @@
 #!/bin/sh
 alias ka="killall" \
-  sdn="sudo shutdown -h now" \
+  sdn="sudo openrc-shutdown -p 0" \
   rbn="sudo shutdown -r now" \
   v="$EDITOR" \
   vimrc="$EDITOR $HOME/.config/nvim/init.vim" \

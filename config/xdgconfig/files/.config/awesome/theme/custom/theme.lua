@@ -12,6 +12,6 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = dofile(themes_path .. "default/theme.lua")
 
-theme.font = "JetBrainsMono Nerd Font 9"
+theme.font = "JetBrainsMono Nerd Font 10"
 
 return theme
