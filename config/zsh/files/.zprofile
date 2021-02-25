@@ -1,9 +1,9 @@
 # Adds `~/.local/bin` to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
-export EDITOR='nvim'
+export EDITOR='vim'
 export TERMINAL='alacritty'
-export BROWSER='firefox'
+export BROWSER='brave'
 export GPG_TTY=($tty)
 export READER="zathura"
 
@@ -12,7 +12,7 @@ export READER="zathura"
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 
-export CHROME_BIN='/bin/chromium' # Needed for headless chrome in Karma testing
+export CHROME_BIN='/bin/brave' # Needed for headless chrome in Karma testing
 
 
 # Work related stuff

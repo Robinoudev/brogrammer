@@ -22,22 +22,22 @@
 ;; (setq doom-font (font-spec :family "Inconsolata" :size 12 :weight 'medium)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18 :weight 'Regular)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
-      doom-big-font (font-spec :family "FiraCode Nerd Font" :size 24))
+(setq doom-font (font-spec :family "SauceCodePro Nerd Font" :size 22 :weight 'Regular)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 22)
+      doom-big-font (font-spec :family "SauceCodePro Nerd Font" :size 26))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
 (custom-set-faces!
   ;; '(font-lock-comment-face :slant Italic :weight Regular)
-  '(font-lock-comment-face :font "JetBrainsMono Nerd Font" :slant Italic)
-  '(font-lock-keyword-face :font "JetBrainsMono Nerd Font" :slant Italic)
-  '(font-lock-type-face :font "JetBrainsMono Nerd Font" :weight Regular))
+  '(font-lock-comment-face :slant Italic)
+  '(font-lock-keyword-face :slant Italic)
+  '(font-lock-type-face :weight Regular))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord-light)
+(setq doom-theme 'doom-nord)
 
 ;; ORG
 ;; If you use `org' and don't want your org files in the default location below,

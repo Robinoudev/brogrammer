@@ -1,8 +1,8 @@
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
-export EDITOR='nvim'
+export EDITOR='vim'
 export TERMINAL='alacritty'
-export BROWSER='firefox'
+export BROWSER='brave'
 GPG_TTY=$(tty)
 export GPG_TTY
 export READER="zathura"

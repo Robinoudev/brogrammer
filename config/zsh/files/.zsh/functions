@@ -47,3 +47,11 @@ function tmux() {
   local SESSION_NAME=$(basename "${$(pwd)//[.:]/_}")
   env SSH_AUTH_SOCK=$SOCK_SYMLINK tmux new -A -s "$SESSION_NAME"
 }
+
+function pg_download() {
+  heroku pg:backups:download -a $1
+}
+
+function pg_apply() {
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d $1 $2
+}
