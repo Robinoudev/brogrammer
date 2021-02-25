@@ -20,7 +20,7 @@ function s:SetColorScheme()
         endif
     else
         set background=dark
-        colorscheme base16-outrun-dark
+        colorscheme base16-default-dark
     endif
 
     " Italicize comments
