@@ -57,6 +57,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'chriskempson/base16-vim'
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'matsuuu/pinkmare'
+    Plug 'tjdevries/colorbuddy.vim'
+    Plug 'tjdevries/gruvbuddy.nvim'
+    Plug 'tjdevries/overlength.vim'
 
     " prettier
     Plug 'sbdchd/neoformat'

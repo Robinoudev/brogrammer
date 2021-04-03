@@ -57,7 +57,8 @@
 " endif
 let g:gruvbox_invert_selection=0
 let g:gruvbox_italic=1
-colorscheme gruvbox
+" colorscheme gruvbox
+lua require('colorbuddy').colorscheme('gruvbuddy')
 
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''

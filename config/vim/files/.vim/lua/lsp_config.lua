@@ -70,3 +70,11 @@ lspconfig.vimls.setup({
 lspconfig.bashls.setup({
     on_attach = custom_attach
 })
+lspconfig.elixirls.setup({
+    on_attach = custom_attach,
+    cmd = { "/usr/local/bin/language_server.sh" }
+})
+lspconfig.pyls.setup({
+    on_attach = custom_attach,
+    cmd = { "pyls" }
+})
