@@ -102,7 +102,7 @@ vim.api.nvim_exec([[
 
 -- hide line numbers in terminal windows
 vim.api.nvim_exec([[
-   au BufEnter term://* setlocal nonumber
+   au BufEnter term://* setlocal nonumber norelativenumber
 ]], false)
 
 -- inactive statuslines as thin splitlines
