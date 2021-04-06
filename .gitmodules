@@ -76,3 +76,6 @@
 [submodule "yay"]
 	path = config/local/files/.local/programs/yay
 	url = https://aur.archlinux.org/yay.git
+[submodule "programs/sumneko_lua"]
+	path = programs/sumneko_lua
+	url = https://github.com/sumneko/lua-language-server

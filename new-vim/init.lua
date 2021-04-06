@@ -84,6 +84,22 @@ require("lspkind").init(
     }
 )
 
+-- highlight yank
+vim.api.nvim_exec([[
+  au TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+]], true)
+
+-- trim training whitespace
+vim.api.nvim_exec([[
+  fun! TrimWhitespace()
+      let l:save = winsaveview()
+      keeppatterns %s/\s\+$//e
+      call winrestview(l:save)
+  endfun
+
+  autocmd BufWritePre * :call TrimWhitespace()
+]], true)
+
 -- hide line numbers in terminal windows
 vim.api.nvim_exec([[
    au BufEnter term://* setlocal nonumber

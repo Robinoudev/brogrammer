@@ -26,6 +26,10 @@ map("n", "<C-k>", "<C-w><C-k>")
 map("n", "/", "/\v")
 map("n", "?", "?\v")
 
+  -- spawn terminal
+map("n", "<C-S-x>", [[<Cmd>vnew term://zsh <CR>]]) -- open term over right
+map("n", "<C-x>", [[<Cmd> split term://zsh | resize 10 <CR>]]) -- open term bottom
+
 -- VISUAL MODE
 map("v", "<leader>p", '"_dP')
 
@@ -48,5 +52,16 @@ map("c", "w!!", "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!")
 
 -- TELESCOPE
 map("n", "<leader>pf", ":lua require('telescope.builtin').find_files()<CR>")
+map("n", "<C-p>", ":lua require('telescope.builtin').git_files()<CR>")
+map(
+  "n",
+  "<leader>ps",
+  ':lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For > ")})<CR>'
+)
 
+map(
+  "n",
+  "<leader>pw",
+  ':lua require("telescope.builtin").grep_string { search = vim.fn.expand("<cword>") }<CR>'
+)
 -- LSP
