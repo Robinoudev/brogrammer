@@ -47,5 +47,6 @@ map("c", "w!!", "execute 'silent! write !sudo tee % >/dev/null' <bar> edit!")
 -- INSERT MODE
 
 -- TELESCOPE
+map("n", "<leader>pf", ":lua require('telescope.builtin').find_files()<CR>")
 
 -- LSP

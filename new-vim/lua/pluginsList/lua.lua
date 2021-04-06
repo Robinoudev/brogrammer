@@ -1,6 +1,5 @@
 -- check if packer is installed (~/local/share/nvim/site/pack)
 local packer_exists = pcall(vim.cmd, [[packadd packer.nvim]])
-local use = use
 
 -- using { } when using a different branch of the plugin or loading the plugin with certain commands
 return require("packer").startup(

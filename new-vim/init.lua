@@ -1,5 +1,17 @@
 -- load plugins
+require "pluginsList.lua"
+require "file-icons.lua"
 
+require "settings.lua"
+require "bufferline.lua"
+require "statusline.lua"
+
+require("colorizer").setup()
+require("neoscroll").setup() -- smooth scroll
+
+-- lsp
+require "lspconfig.lua"
+require "compe.lua"
 
 -- basic settings
 
