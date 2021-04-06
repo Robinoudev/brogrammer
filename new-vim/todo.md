@@ -1,2 +1,3 @@
 - [ ] finish telescope mappings
 - [ ] add more settings from old init.vim
+- [ ] figure out why backupdir is not working in settings/lua.lua
