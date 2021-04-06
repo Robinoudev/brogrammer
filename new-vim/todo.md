@@ -1,0 +1,2 @@
+- [ ] finish telescope mappings
+- [ ] add more settings from old init.vim
