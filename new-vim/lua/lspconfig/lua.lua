@@ -104,7 +104,7 @@ local sumneko_root_path
 if vim.fn.has("mac") == 1 then
   sumneko_root_path = "/Users/robin/personal/brogrammer/programs/sumneko_lua"
 elseif vim.fn.has("unix") == 1 then
-  sumneko_root_path = "/home/robin/.local/programs/lua-language-server/bin/Linux/lua-language-server"
+  sumneko_root_path = "/home/robin/.local/programs/lua-language-server"
 end
 
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"

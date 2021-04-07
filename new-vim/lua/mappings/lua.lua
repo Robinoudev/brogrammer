@@ -7,7 +7,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- NORMAL MODE
-map("n", "<silent><esc>", ":noh<CR>")
+map("n", "<esc>", ":noh<CR>", {silent = true})
 map("n", "<leader>bd", ":bd<CR>")
 map("n", "<leader>gs", ":G<CR>")
 map("n", "<leader>gp", ":Git push <Space>")
@@ -23,8 +23,8 @@ map("n", "<C-j>", "<C-w><C-j>")
 map("n", "<C-k>", "<C-w><C-k>")
 
     -- very magic
-map("n", "/", "/\v")
-map("n", "?", "?\v")
+map("n", "/", "/\\v")
+map("n", "?", "?\\v")
 
   -- spawn terminal
 map("n", "<C-S-x>", [[<Cmd>vnew term://zsh <CR>]]) -- open term over right
@@ -38,8 +38,8 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
     -- very magic in visual mode
-map("v", "/", "/\v")
-map("v", "?", "?\v")
+map("v", "/", "/\\v")
+map("v", "?", "?\\v")
 
 -- COMMAND MODE
     -- Yank the current file to the system clipboard
@@ -64,4 +64,11 @@ map(
   "<leader>pw",
   ':lua require("telescope.builtin").grep_string { search = vim.fn.expand("<cword>") }<CR>'
 )
+
+map(
+  "n",
+  "<leader>pb",
+  ':lua require("telescope.builtin").buffers()<CR>'
+)
+
 -- LSP

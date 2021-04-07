@@ -19,7 +19,6 @@ return require("packer").startup(
         use "nvim-lua/plenary.nvim"
 
         -- utils
-        use "907th/vim-auto-save"
         use "windwp/nvim-autopairs"
         use "alvan/vim-closetag"
         use "tweekmonster/startuptime.vim"

@@ -19,7 +19,6 @@ local cmd = vim.cmd
 local g = vim.g
 
 g.mapleader = " "
-g.auto_save = 1
 
 cmd "syntax enable"
 cmd "syntax on"
