@@ -22,9 +22,9 @@
 ;; (setq doom-font (font-spec :family "Inconsolata" :size 12 :weight 'medium)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "SauceCodePro Nerd Font" :size 22 :weight 'Regular)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 22)
-      doom-big-font (font-spec :family "SauceCodePro Nerd Font" :size 26))
+(setq doom-font (font-spec :family "Ubuntu Mono Nerd Font" :size 14 :weight 'Regular)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 14)
+      doom-big-font (font-spec :family "Ubuntu Mono Nerd Font" :size 26))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))

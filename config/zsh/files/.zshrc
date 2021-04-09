@@ -1,18 +1,6 @@
-# export ZSH="/home/robin/.oh-my-zsh"
-
-# ZSH_THEME="spaceship"
-
-# plugins=(git fzf git-auto-fetch)
-
-# source $ZSH/oh-my-zsh.sh
-
-# precmd() { vcs_info }
-
 # Enable colors and change prompt:
 autoload -U colors && colors  # Load colors
-# setopt PROMPT_SUBST
-# PS1="%{$fg[green]%}%n%{$fg_bold[white]%}@%{$fg_bold[yellow]%}%m %{$fg_bold[green]%}%1~%{$reset_color%} $ "
-# PS1="%B%{$fg[red]%}%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}%{$reset_color%} $%b "
+
 stty stop undef     # Disable ctrl-s to freeze terminal.
 
 # Base16 Shell
@@ -20,61 +8,6 @@ BASE16_SHELL="$HOME/.zsh/base16-shell"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-#
-# Prompt
-#
-
-autoload -U colors
-colors
-
-# # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
-# autoload -Uz vcs_info
-# zstyle ':vcs_info:*' enable git hg
-# zstyle ':vcs_info:*' check-for-changes true
-# zstyle ':vcs_info:*' disable-patterns "${(b)HOME}/code/(portal|portal-ee|portal-master)(|/*)"
-# zstyle ':vcs_info:*' stagedstr "%F{green}●%f" # default 'S'
-# zstyle ':vcs_info:*' unstagedstr "%F{red}●%f" # default 'U'
-# zstyle ':vcs_info:*' use-simple true
-# zstyle ':vcs_info:git+set-message:*' hooks git-untracked
-# zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] ' # default ' (%s)-[%b]%c%u-'
-# zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u] ' # default ' (%s)-[%b|%a]%c%u-'
-# zstyle ':vcs_info:hg*:*' formats '[%m%b] '
-# zstyle ':vcs_info:hg*:*' actionformats '[%b|%a%m] '
-# zstyle ':vcs_info:hg*:*' branchformat '%b'
-# zstyle ':vcs_info:hg*:*' get-bookmarks true
-# zstyle ':vcs_info:hg*:*' get-revision true
-# zstyle ':vcs_info:hg*:*' get-mq false
-# zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks hg-bookmarks
-# zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
-
-# function +vi-hg-bookmarks() {
-#   emulate -L zsh
-#   if [[ -n "${hook_com[hg-active-bookmark]}" ]]; then
-#     hook_com[hg-bookmark-string]="${(Mj:,:)@}"
-#     ret=1
-#   fi
-# }
-
-# function +vi-hg-message() {
-#   emulate -L zsh
-
-#   # Suppress hg branch display if we can display a bookmark instead.
-#   if [[ -n "${hook_com[misc]}" ]]; then
-#     hook_com[branch]=''
-#   fi
-#   return 0
-# }
-
-# function +vi-git-untracked() {
-#   emulate -L zsh
-#   if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
-#     hook_com[unstaged]+="%F{blue}●%f"
-#   fi
-# }
-
-# RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
-# setopt PROMPT_SUBST
 
 # Anonymous function to avoid leaking variables.
 function () {
@@ -128,6 +61,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)       # Include hidden files.
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -163,16 +97,10 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 
-# if [[ $ZSH_THEME = 'spaceship' ]]; then
-#   sources+=('spaceship')
-# fi
-
-# for s in "${sources[@]}"; do
-#   source $HOME/.oh-my-zsh/include/${s}.zsh
-# done
-
-
 export LC_ALL=en_US.UTF-8
+
+SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # ASDF
 . $HOME/.asdf/asdf.sh
@@ -186,7 +114,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(starship init zsh)"
+source /home/robin/.config/broot/launcher/bash/br
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

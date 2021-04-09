@@ -24,7 +24,7 @@ cmd "syntax enable"
 cmd "syntax on"
 
 local base16 = require "base16"
-base16(base16.themes["onedark"], true)
+base16(base16.themes["default-dark"], true)
 
 local indent = 2
 
@@ -45,7 +45,7 @@ require("mappings.lua")
 
 -- highlights --
 cmd "hi LineNr guifg=#383c44 guibg=NONE"
-cmd "hi Comment guifg=#3d4149"
+-- cmd "hi Comment guifg=#3d4149"
 cmd "hi SignColumn guibg=NONE"
 cmd "hi VertSplit guibg=NONE guifg=#2a2e36"
 cmd "hi EndOfBuffer guifg=#1e222a"

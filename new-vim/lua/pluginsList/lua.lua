@@ -31,6 +31,10 @@ return require("packer").startup(
         use 'wsdjeg/vim-fetch'
         use 'justinmk/vim-dirvish'
 
+        -- fzf
+
+        use 'junegunn/fzf'
+        use 'junegunn/fzf.vim'
 
         -- Debugger Plugins
         use 'puremourning/vimspector'
