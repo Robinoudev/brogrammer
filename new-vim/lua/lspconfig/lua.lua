@@ -1,6 +1,17 @@
 vim.cmd [[packadd nvim-lspconfig]]
 vim.cmd [[packadd nvim-compe]]
 
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+elseif vim.fn.has('win32') == 1 then
+  system_name = "Windows"
+else
+  print("Unsupported system for sumneko")
+end
+
 local lspconfig = require('lspconfig')
 local map_key = function(mode, key, result)
   vim.api.nvim_buf_set_keymap(0, mode, key, result, {noremap = true, silent = true})
@@ -65,8 +76,16 @@ lspconfig.solargraph.setup({
     on_attach = custom_attach,
     settings = { solargraph = { diagnostics = true; formatting = true; logLevel = 'debug'; } }
 })
+local clangdcmd
+if system_name == "macOS" then
+  clangdcmd = "/usr/local/opt/llvm/bin/clangd"
+else
+  clangdcmd = "clangd"
+end
+
 lspconfig.clangd.setup({
-    on_attach = custom_attach
+    on_attach = custom_attach,
+    cmd = { clangdcmd, "--background-index" }
 })
 lspconfig.rust_analyzer.setup({
     on_attach = custom_attach
@@ -88,17 +107,6 @@ lspconfig.pyls.setup({
     on_attach = custom_attach,
     cmd = { "pyls" }
 })
-
-local system_name
-if vim.fn.has("mac") == 1 then
-  system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-  system_name = "Linux"
-elseif vim.fn.has('win32') == 1 then
-  system_name = "Windows"
-else
-  print("Unsupported system for sumneko")
-end
 
 local sumneko_root_path
 if vim.fn.has("mac") == 1 then
