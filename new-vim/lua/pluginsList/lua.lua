@@ -10,6 +10,8 @@ return require("packer").startup(
         use "neovim/nvim-lspconfig"
         use "hrsh7th/nvim-compe"
         use "onsails/lspkind-nvim"
+        use "tjdevries/nlua.nvim"
+        use "tjdevries/lsp_extensions.nvim"
         -- Plug 'nvim-lua/completion-nvim'
 
         -- telescope
